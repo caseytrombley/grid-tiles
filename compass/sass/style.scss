@@ -1,0 +1,157 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+//mixins
+$c0: #cdcdcd;
+$c1: #d1d1d1;
+$c2: #d3d3d3;
+$c3: #dcdcdc;
+$c4: #e0e0e0;
+$c5: #e8e8e8;
+
+$colors: $c0, $c1, $c2, $c3, $c4, $c5;
+
+@mixin transform($seconds) {
+	-webkit-transition: -webkit-transform $seconds;
+	-moz-transition: -moz-transform $seconds;
+	-o-transition: -o-transform $seconds;
+	transition: transform $seconds;
+}
+@mixin transition($seconds) {
+	-webkit-transition: opacity $seconds ease-in-out;
+    -moz-transition: opacity $seconds ease-in-out;
+    -o-transition: opacity $seconds ease-in-out;
+    transition: opacity $seconds ease-in-out;
+}
+@mixin translate($distance) {
+	-webkit-transform: translateX($distance);
+    -moz-transform: translateX($distance);
+    -ms-transform: translateX($distance);
+    -o-transform: translateX($distance);
+    transform: translateX($distance);
+}
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	  border-radius: $radius;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grid { 
+    list-style: none;
+    h2 {
+    	margin: 20px;
+    }
+    .img {
+    	text-align: center;
+		opacity: .2;
+		
+		@include border-radius(2px);
+		@include transition(0.3s);
+		
+		&:hover {
+		    	opacity: 1;
+		    }
+
+    }
+    .tile {
+    	display: block;
+	    overflow: hidden;
+	    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    text-align: center;
+
+	    .link {
+		    display: block;
+		    padding: 20px;
+		    color: #444;
+		    text-decoration: none;
+
+		    @include transform(0.3s);
+		    
+		    &:hover {
+
+		    	@include translate(-5px);
+
+		    }
+		    &::after {
+				display: inline-block;
+			    position: relative;
+			    z-index: 1000;
+			    opacity: 0;
+			    transition: all 0.3s ease 0s, opacity 0.2s ease 0s;
+				margin-left: 10px;
+			    content: ">>";
+
+			    @include translate(-20px);
+			}
+
+			&:hover, &:active, &:focus {
+				&::before, &::after {
+					opacity: 0.3;
+
+					  	@include translate(0px);
+				}
+			}
+		}
+    }
+    @for $i from 1 through length($colors) {
+	    .tile:nth-child(#{length($colors)}n+#{$i}) {
+	        background-color: nth($colors, $i)
+	    }
+	}
+}
+  
+
+
+//queries 
+
+@media all and (min-width: 480px) {
+  .grid {
+    display: block;
+  }
+  .tile {
+    width: 50%;
+    float: left;
+  }
+}
+@media all and (min-width: 768px) {
+  .tile {
+    width: 25%;
+  }
+  .link {
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+  }
+  .link :hover {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@media all and (min-width: 1024px) {
+  .tile {
+    overflow: visible;
+    width: 12.5%;
+  }
+  .link  {
+    padding: 80px 20px 20px 20px;
+  }
+  .link :hover {
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
