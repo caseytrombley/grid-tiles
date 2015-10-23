@@ -1,18 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-/* line 40, ../compass/sass/style.scss */
+/* line 39, ../compass/sass/style.scss */
 body {
+  padding: 0;
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
 /* line 44, ../compass/sass/style.scss */
 .grid {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
-/* line 46, ../compass/sass/style.scss */
+/* line 48, ../compass/sass/style.scss */
 .grid h2 {
   margin: 20px;
 }
-/* line 49, ../compass/sass/style.scss */
+/* line 51, ../compass/sass/style.scss */
 .grid .img {
   text-align: center;
   opacity: .2;
@@ -25,18 +29,18 @@ body {
   -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
-/* line 56, ../compass/sass/style.scss */
+/* line 58, ../compass/sass/style.scss */
 .grid .img:hover {
   opacity: 1;
 }
-/* line 61, ../compass/sass/style.scss */
+/* line 63, ../compass/sass/style.scss */
 .grid .tile {
   display: block;
   overflow: hidden;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
 }
-/* line 67, ../compass/sass/style.scss */
+/* line 69, ../compass/sass/style.scss */
 .grid .tile .link {
   display: block;
   padding: 20px;
@@ -47,7 +51,7 @@ body {
   -o-transition: -o-transform 0.3s;
   transition: transform 0.3s;
 }
-/* line 75, ../compass/sass/style.scss */
+/* line 77, ../compass/sass/style.scss */
 .grid .tile .link:hover {
   -webkit-transform: translateX(-5px);
   -moz-transform: translateX(-5px);
@@ -55,7 +59,7 @@ body {
   -o-transform: translateX(-5px);
   transform: translateX(-5px);
 }
-/* line 80, ../compass/sass/style.scss */
+/* line 82, ../compass/sass/style.scss */
 .grid .tile .link::after {
   display: inline-block;
   position: relative;
@@ -70,7 +74,7 @@ body {
   -o-transform: translateX(-20px);
   transform: translateX(-20px);
 }
-/* line 93, ../compass/sass/style.scss */
+/* line 96, ../compass/sass/style.scss */
 .grid .tile .link:hover::before, .grid .tile .link:hover::after, .grid .tile .link:active::before, .grid .tile .link:active::after, .grid .tile .link:focus::before, .grid .tile .link:focus::after {
   opacity: 0.3;
   -webkit-transform: translateX(0px);
@@ -79,57 +83,56 @@ body {
   -o-transform: translateX(0px);
   transform: translateX(0px);
 }
-/* line 102, ../compass/sass/style.scss */
+/* line 104, ../compass/sass/style.scss */
 .grid .tile:nth-child(6n+1) {
   background-color: #cdcdcd;
 }
-/* line 102, ../compass/sass/style.scss */
+/* line 104, ../compass/sass/style.scss */
 .grid .tile:nth-child(6n+2) {
   background-color: #d1d1d1;
 }
-/* line 102, ../compass/sass/style.scss */
+/* line 104, ../compass/sass/style.scss */
 .grid .tile:nth-child(6n+3) {
   background-color: #d3d3d3;
 }
-/* line 102, ../compass/sass/style.scss */
+/* line 104, ../compass/sass/style.scss */
 .grid .tile:nth-child(6n+4) {
   background-color: #dcdcdc;
 }
-/* line 102, ../compass/sass/style.scss */
+/* line 104, ../compass/sass/style.scss */
 .grid .tile:nth-child(6n+5) {
   background-color: #e0e0e0;
 }
-/* line 102, ../compass/sass/style.scss */
+/* line 104, ../compass/sass/style.scss */
 .grid .tile:nth-child(6n+6) {
   background-color: #e8e8e8;
 }
 
 @media all and (min-width: 480px) {
-  /* line 113, ../compass/sass/style.scss */
+  /* line 115, ../compass/sass/style.scss */
   .grid {
     display: block;
   }
 
-  /* line 116, ../compass/sass/style.scss */
+  /* line 118, ../compass/sass/style.scss */
   .tile {
     width: 50%;
     float: left;
   }
 }
 @media all and (min-width: 768px) {
-  /* line 122, ../compass/sass/style.scss */
+  /* line 124, ../compass/sass/style.scss */
   .tile {
     width: 25%;
   }
 
-  /* line 125, ../compass/sass/style.scss */
+  /* line 127, ../compass/sass/style.scss */
   .link {
     text-align: center;
     padding: 60px 20px 20px 20px;
   }
-
-  /* line 129, ../compass/sass/style.scss */
-  .link :hover {
+  /* line 130, ../compass/sass/style.scss */
+  .link:hover {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -ms-transform: translateX(0);
@@ -143,19 +146,18 @@ body {
   }
 }
 @media all and (min-width: 1024px) {
-  /* line 143, ../compass/sass/style.scss */
+  /* line 146, ../compass/sass/style.scss */
   .tile {
     overflow: visible;
     width: 12.5%;
   }
 
-  /* line 147, ../compass/sass/style.scss */
+  /* line 150, ../compass/sass/style.scss */
   .link {
     padding: 80px 20px 20px 20px;
   }
-
-  /* line 150, ../compass/sass/style.scss */
-  .link :hover {
+  /* line 152, ../compass/sass/style.scss */
+  .link:hover {
     -webkit-transform: translateY(20px);
     -moz-transform: translateY(20px);
     -ms-transform: translateY(20px);
